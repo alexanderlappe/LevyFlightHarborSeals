@@ -5,7 +5,7 @@ This repo contains code to run the analysis performed in "Lévy flight movements
 ### Code
 
 #### Cloning And Opening The Repo
-The script levy_flight_analysis.R outputs the relevant findings of the data analysis. After cloning the repo, open this script in RStudio. The code has not been tested on other IDEs,
+The script levy_flight_analysis.R outputs the relevant findings of the data analysis. After cloning the repo, please open this script in RStudio if possible. The code has not been tested on other IDEs
 and it is possible that issues with the working directory arise if not opened in RStudio. 
 
 #### Preparing The Analysis Settings
