@@ -14,3 +14,6 @@ the raw GPS data. The second line relates to the individual animal of interest. 
 
 #### Running The Analysis
 After setting the necessary parameters, simply run the script to obtain the analysis results. The other files only contain helper functions and need not be run individually.
+
+### Data
+To be determined.
