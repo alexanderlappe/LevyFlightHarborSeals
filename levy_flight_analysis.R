@@ -1,11 +1,9 @@
 ### Settings ###
 
 # Set path leading to excel file containing the GPS data
-path = "C:\\Users\\Alex\\OneDrive - UT Cloud\\Documents\\Uni\\LevyFlight\\gps_data.xlsx"
+path = "C:\\Users\\my_directory\\gps_data.xlsx"
 # Choose animal by setting the string to the name of the corresponding sheet in the excel file
 animal = "S11"
-
-
 
 ### Code ###
 
