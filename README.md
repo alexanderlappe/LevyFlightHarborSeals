@@ -10,7 +10,7 @@ and it is possible that issues with the working directory arise if not opened in
 
 #### Preparing The Analysis Settings
 The only file that needs to be edited is levy_flight_analysis.R, in particular its first two lines: The path variable should be set to the excel file containing
-the raw GPS data. The second line relates to the individual animal of interest. The variable should be set to a string corresponding to one of the sheets in the excel file.
+the raw GPS data. The second line relates to the individual animal of interest. The animal variable should be set to a string corresponding to one of the sheets in the excel file. The valid strings range from "S11" through "S25".
 
 #### Running The Analysis
 After setting the necessary parameters, simply run the script to obtain the analysis results. The other files only contain helper functions and need not be run individually.
