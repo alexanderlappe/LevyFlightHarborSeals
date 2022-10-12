@@ -1,15 +1,21 @@
 ### Settings ###
 
 # Set path leading to excel file containing the GPS data
-path = "C:\\Users\\my_directory\\gps_data.xlsx"
+path = "C:\\Users\\Alex\\OneDrive - UT Cloud\\Documents\\Uni\\LevyFlight\\95167.csv"
+
 # Choose animal by setting the string to the name of the corresponding sheet in the excel file
-animal = "S11"
+animal = "S22"
 
 ### Code ###
 
 print(paste0("Animal: ", animal))
 # Set working directory to current folder, import functions
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# Clear console0,20,0595613
+
+cat("\014") 
+set.seed(42)
+# Load libraries and helper files
 library(tidyverse)
 library(readxl)
 library(lubridate)
@@ -21,10 +27,11 @@ source("get_steps.R")
 source("fit_distributions.R")
 source("plot_distribution.R")
 source("bootstrapped_cvm.R")
+source("load_data.R")
 
 # Load Data
-data <- read_excel(path, col_names = c('Id', "Date", "x1", "x2", "lat", "lon", "V_MASK"), sheet = animal) %>% 
-  filter(V_MASK == 0) %>% select(-c(Id, x1, x2))
+data <- load_data(path, animal)
+print(nrow(data))
 
 # Generate step lengths
 steps = get_steps(data=data)
@@ -37,7 +44,7 @@ alpha = fit_pareto(steps_truncated)[2]
 xmin = fit_truncated_pareto(steps_truncated)[1]
 xmax = fit_truncated_pareto(steps_truncated)[2]
 alpha_truncated = fit_truncated_pareto(steps_truncated)[3]
-print(paste0("Estimated exponent for the truncated Pareto distribution: ", round(alpha_truncated, 2)))
+print(paste0("Estimated exponent for the truncated Pareto distribution: ", round(alpha_truncated, 3)))
 
 # Plot data
 plot_object = plot_distribution(steps_truncated, xmin, xmax, alpha, alpha_truncated)

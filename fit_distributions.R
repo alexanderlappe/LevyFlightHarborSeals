@@ -33,7 +33,7 @@ fit_truncated_pareto <- function(step_lengths) {
   
   xmin <- min(step_lengths)
   xmax <- max(step_lengths)
-  LogLikelihood <- function(mu) return(length(steps_truncated) * log(mu / (xmin**(-mu)-xmax**(-mu))) - (mu+1)*sum(log(steps_truncated)))
+  LogLikelihood <- function(mu) return(length(step_lengths) * log(mu / (xmin**(-mu)-xmax**(-mu))) - (mu+1)*sum(log(step_lengths)))
   mu_hat <- optimize(LogLikelihood, c(0,4), maximum = T)$maximum
   return(c(xmin, xmax, mu_hat))
 }
